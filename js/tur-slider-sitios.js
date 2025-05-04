@@ -1,21 +1,34 @@
-// tur-slider-sitios.js
-document.addEventListener("DOMContentLoaded", function() {
-    const tourSwiper = new Swiper(".tour-swip-gbm", {
-      modules: [SwiperGL],
+document.addEventListener("DOMContentLoaded", function () {
+    new Swiper(".tour-swip-gbm", {
+      autoHeight: true,
       grabCursor: true,
       rewind: true,
-      effect: "gl",
-      gl: { shader: "slices" },
-      speed: 900,
+      effect: "fade",
+      fadeEffect: { crossFade: true },
+      speed: 1300,
+  
       navigation: {
-        prevEl: ".tour-swip-gbm-button-prev",
-        nextEl: ".tour-swip-gbm-button-next",
+        prevEl: ".swiper-button-prev",
+        nextEl: ".swiper-button-next",
       },
+  
       pagination: {
-        el: ".tour-swip-gbm-pagination",
+        el: ".swiper-pagination",
         clickable: true,
       },
+  
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        draggable: true,
+      },
+  
+      keyboard: { enabled: true },
+      mousewheel: { enabled: true },
+      parallax: { enabled: true },
       watchSlidesProgress: true,
+      observer: true,
+      observeParents: true,
+  
       breakpoints: {
         768: {},
         1280: {},
