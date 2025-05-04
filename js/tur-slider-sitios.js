@@ -1,35 +1,21 @@
-// JS: inicializa tu Swiper con el nuevo selector y nombres de elementos
-import Swiper, { SwiperGL } from "swiper";
-
+// tur-slider-sitios.js
 var tourSwiper = new Swiper(".tour-swip-gbm", {
-  modules: [SwiperGL],
-  grabCursor: true,
-  rewind: true,
-  effect: "gl",
-  gl: { shader: "slices" },
-  speed: 900,
-
-  navigation: {
-    enabled: true,
-    prevEl: ".tour-swip-gbm-button-prev",
-    nextEl: ".tour-swip-gbm-button-next",
-  },
-
-  pagination: {
-    enabled: true,
-    clickable: true,
-    el: ".tour-swip-gbm-pagination",
-  },
-
-  watchSlidesProgress: true,
-
-  breakpoints: {
-    768: {},
-    1280: {},
-    1920: {},
-  },
-});
-
+    modules: [SwiperGL],       // solo si también cargaste SwiperGL o lo incluyes en bundle
+    grabCursor: true,
+    rewind: true,
+    effect: "gl",
+    gl: { shader: "slices" },
+    speed: 900,
+    navigation: {
+      prevEl: ".tour-swip-gbm-button-prev",
+      nextEl: ".tour-swip-gbm-button-next",
+    },
+    pagination: {
+      el: ".tour-swip-gbm-pagination",
+      clickable: true,
+    },
+    watchSlidesProgress: true,
+  });
 
    //SWIPER.JS
    const swiperImageNews = new Swiper('.swiper.is-secretaria-programas', {
