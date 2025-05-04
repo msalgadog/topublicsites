@@ -8,17 +8,17 @@ document.addEventListener("DOMContentLoaded", function () {
       speed: 1300,
   
       navigation: {
-        prevEl: ".swiper-button-prev",
-        nextEl: ".swiper-button-next",
+        prevEl: ".tour-swip-gbm-button-prev",
+        nextEl: ".tour-swip-gbm-button-next",
       },
   
       pagination: {
-        el: ".swiper-pagination",
+        el: ".tour-swip-gbm-pagination",
         clickable: true,
       },
   
       scrollbar: {
-        el: ".swiper-scrollbar",
+        el: ".tour-swip-gbm-scrollbar",
         draggable: true,
       },
   
@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     });
   });
+  
   
    //SWIPER.JS
    const swiperImageNews = new Swiper('.swiper.is-secretaria-programas', {
