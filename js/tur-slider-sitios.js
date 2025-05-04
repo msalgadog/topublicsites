@@ -1,22 +1,29 @@
 // tur-slider-sitios.js
-var tourSwiper = new Swiper(".tour-swip-gbm", {
-    modules: [SwiperGL],       // solo si también cargaste SwiperGL o lo incluyes en bundle
-    grabCursor: true,
-    rewind: true,
-    effect: "gl",
-    gl: { shader: "slices" },
-    speed: 900,
-    navigation: {
-      prevEl: ".tour-swip-gbm-button-prev",
-      nextEl: ".tour-swip-gbm-button-next",
-    },
-    pagination: {
-      el: ".tour-swip-gbm-pagination",
-      clickable: true,
-    },
-    watchSlidesProgress: true,
+document.addEventListener("DOMContentLoaded", function() {
+    const tourSwiper = new Swiper(".tour-swip-gbm", {
+      modules: [SwiperGL],
+      grabCursor: true,
+      rewind: true,
+      effect: "gl",
+      gl: { shader: "slices" },
+      speed: 900,
+      navigation: {
+        prevEl: ".tour-swip-gbm-button-prev",
+        nextEl: ".tour-swip-gbm-button-next",
+      },
+      pagination: {
+        el: ".tour-swip-gbm-pagination",
+        clickable: true,
+      },
+      watchSlidesProgress: true,
+      breakpoints: {
+        768: {},
+        1280: {},
+        1920: {},
+      },
+    });
   });
-
+  
    //SWIPER.JS
    const swiperImageNews = new Swiper('.swiper.is-secretaria-programas', {
     speed: 2500,
