@@ -94,6 +94,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+/*
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".tur-gbm-card").forEach((card) => {
     const mainImg = card.querySelector(".tur-gbm-main-image");
@@ -115,6 +117,23 @@ document.addEventListener("DOMContentLoaded", function () {
             mainImg.removeEventListener("transitionend", handleTransition);
           }
         );
+      });
+    });
+  });
+});
+*/
+document.addEventListener("DOMContentLoaded", function () {
+  // Por cada card en la página…
+  document.querySelectorAll(".tur-gbm-card").forEach((card) => {
+    const mainImg = card.querySelector(".tur-gbm-main-image");
+    const thumbs = card.querySelectorAll(".tur-gbm-thumb");
+
+    thumbs.forEach((thumb) => {
+      thumb.addEventListener("click", () => {
+        // intercambia src de la thumb y la main
+        const tmp = mainImg.src;
+        mainImg.src = thumb.src;
+        thumb.src = tmp;
       });
     });
   });
