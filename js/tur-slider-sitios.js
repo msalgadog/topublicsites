@@ -37,30 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
-//SWIPER.JS
-const swiperImageNews = new Swiper('.swiper.is-secretaria-programas', {
-  speed: 2500,
-  spaceBetween: 20,
-  slidesPerView: 1,
-  rewind: true,
-  autoplay: {
-    delay: 2000,
-  },
-  breakpoints: {
-    // when window width is >= 768px
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 30
-    },
-    // when window width is >= 620px
-    920: {
-      slidesPerView: 2,
-      spaceBetween: 25
-    }
-  }
-});
-
 $('.gbm-slick__container').slick({
   slidesToShow: 5,
   infinite: true,
@@ -89,36 +65,53 @@ $('.gbm-slick__container').slick({
     }
   ]
 });
+const swiperNoticias = new Swiper(".gbm-swiper-noticias", {
+  spaceBetween: 20,
+  grabCursor: true,
+  rewind: true,
+  speed: 600,
+  navigation: {
+    prevEl: ".gbm-swiper-noticias .swiper-button-prev",
+    nextEl: ".gbm-swiper-noticias .swiper-button-next",
+  },
+  pagination: {
+    el: ".gbm-swiper-noticias .swiper-pagination",
+    clickable: true,
+    dynamicBullets: true
+  },
+  breakpoints: {
+    1280: { slidesPerView: 3 },
+    1920: { slidesPerView: 4, freeMode: { enabled: true } },
+  }
+});
 document.addEventListener("DOMContentLoaded", function () {
-  // Por cada card en la página…
+  document.querySelectorAll('.dt-fecha').forEach(el => {
+    const rawDate = el.textContent.trim();
+    const dateObj = new Date(rawDate);
+    if (!isNaN(dateObj.getTime())) {
+      const opciones = { year: 'numeric', month: 'long', day: 'numeric' };
+      el.textContent = dateObj.toLocaleDateString('es-MX', opciones);
+    }
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".tur-gbm-card").forEach((card) => {
     const mainImg = card.querySelector(".tur-gbm-main-image");
     const thumbs = card.querySelectorAll(".tur-gbm-thumb");
-
     thumbs.forEach((thumb) => {
       thumb.addEventListener("click", () => {
-        // Add fade-out effect to the main image
         mainImg.classList.add("fade-out");
-
-        // Wait for the fade-out effect to complete
         mainImg.addEventListener(
           "transitionend",
           function handleTransition() {
-            // Intercambia src de la thumb y la main
             const tmp = mainImg.src;
             mainImg.src = thumb.src;
             thumb.src = tmp;
-
-            // Remove fade-out and add fade-in effect
             mainImg.classList.remove("fade-out");
             mainImg.classList.add("fade-in");
-
-            // Remove fade-in class after animation
             setTimeout(() => {
               mainImg.classList.remove("fade-in");
             }, 300);
-
-            // Remove the event listener to avoid duplicate triggers
             mainImg.removeEventListener("transitionend", handleTransition);
           }
         );
