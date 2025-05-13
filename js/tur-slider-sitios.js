@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
 
     keyboard: { enabled: true },
-    mousewheel: { enabled: true },
+    mousewheel: { enabled: false },
     parallax: { enabled: true },
     watchSlidesProgress: true,
     observer: true,
