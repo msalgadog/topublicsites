@@ -94,47 +94,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+  document.addEventListener("DOMContentLoaded", function () {
 
-/*
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".tur-gbm-card").forEach((card) => {
-    const mainImg = card.querySelector(".tur-gbm-main-image");
-    const thumbs = card.querySelectorAll(".tur-gbm-thumb");
-    thumbs.forEach((thumb) => {
-      thumb.addEventListener("click", () => {
-        mainImg.classList.add("fade-out");
-        mainImg.addEventListener(
-          "transitionend",
-          function handleTransition() {
-            const tmp = mainImg.src;
-            mainImg.src = thumb.src;
-            thumb.src = tmp;
-            mainImg.classList.remove("fade-out");
-            mainImg.classList.add("fade-in");
-            setTimeout(() => {
-              mainImg.classList.remove("fade-in");
-            }, 300);
-            mainImg.removeEventListener("transitionend", handleTransition);
-          }
-        );
+    document.querySelectorAll(".tur-gbm-gallery").forEach((gallery) => {
+      const mainImg = gallery.querySelector(".tur-gbm-main-image");
+      const thumbs  = gallery.querySelectorAll(".tur-gbm-thumb");
+
+      thumbs.forEach((thumb) => {
+
+        thumb.style.cursor = "pointer";
+
+        thumb.addEventListener("click", () => {
+          const tmpSrc    = mainImg.src;
+          const tmpSrcset = mainImg.srcset;
+          mainImg.src    = thumb.src;
+          mainImg.srcset = thumb.srcset;
+          thumb.src    = tmpSrc;
+          thumb.srcset = tmpSrcset;
+        });
       });
     });
   });
-});
-*/
-document.addEventListener("DOMContentLoaded", function () {
-  // Por cada card en la página…
-  document.querySelectorAll(".tur-gbm-card").forEach((card) => {
-    const mainImg = card.querySelector(".tur-gbm-main-image");
-    const thumbs = card.querySelectorAll(".tur-gbm-thumb");
 
-    thumbs.forEach((thumb) => {
-      thumb.addEventListener("click", () => {
-        // intercambia src de la thumb y la main
-        const tmp = mainImg.src;
-        mainImg.src = thumb.src;
-        thumb.src = tmp;
-      });
-    });
-  });
-});
