@@ -1,0 +1,150 @@
+/** Swiper styles **/
+
+:root {
+    --swiper-navigation-color: rgba(128, 46, 88, 1);
+}
+
+.swiper {
+    user-select: none;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+
+    height: auto;
+
+    padding: 32px 0px;
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.swiper-slide-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+.swiper-slide-026c {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.swiper-slide-content-2f5e {
+    padding: 48px 48px;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-slide-text-78dc {
+    color: rgba(255, 255, 255, 1);
+    text-align: left;
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .swiper {
+        width: 100%;
+
+        height: 100%;
+
+        padding: 32px 0px;
+    }
+
+    .swiper-slide {
+        width: 100%;
+        height: 100%;
+    }
+
+    :root {
+        --swiper-navigation-top-offset: 50%;
+    }
+}
+
+@media (min-width: 812px) {
+    .swiper {
+        width: 100%;
+
+        height: 100%;
+
+        padding: 32px 0px;
+    }
+
+    .swiper-slide {
+        width: 100%;
+        height: 100%;
+    }
+
+    :root {
+        --swiper-navigation-top-offset: 50%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .swiper {
+        width: 100%;
+
+        height: 100%;
+
+        padding: 32px 0px;
+    }
+
+    .swiper-slide {
+        width: 100%;
+        height: 100%;
+    }
+
+    :root {
+        --swiper-navigation-top-offset: 50%;
+    }
+}
+
+@media (min-width: 1280px) {
+    .swiper {
+        width: 100%;
+
+        height: 100%;
+
+        padding: 32px 0px;
+    }
+
+    .swiper-slide {
+        width: 100%;
+        height: 100%;
+    }
+
+    :root {
+        --swiper-navigation-top-offset: 50%;
+    }
+}
+
+@media (min-width: 1920px) {
+    .swiper {
+        width: 100%;
+
+        height: 100%;
+
+        padding: 32px 0px;
+    }
+
+    .swiper-slide {
+        width: 100%;
+        height: 100%;
+    }
+
+    :root {
+        --swiper-navigation-top-offset: 50%;
+    }
+}
