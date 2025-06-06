@@ -37,6 +37,7 @@
       .swiper-slide-026c {
         background-color: rgba(255, 255, 255, 1);
       }
+
       .swiper-slide-content-2f5e {
         padding: 48px 48px;
         flex-direction: column;
@@ -44,6 +45,7 @@
         align-items: center;
         justify-content: center;
       }
+
       .swiper-slide-text-78dc {
         color: rgba(255, 255, 255, 1);
         text-align: left;
@@ -145,4 +147,15 @@
         :root {
           --swiper-navigation-top-offset: 50%;
         }
+      }
+
+      .gbm-noticias-swiper__info-title,
+      .gbm-noticias-swiper__info-text {
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+        /* fuerza el corte más limpio posible */
       }
