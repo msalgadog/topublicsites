@@ -3,8 +3,8 @@ var swiper = new Swiper(".swiper", {
     autoHeight: true,
     navigation: {
         enabled: true,
-        prevEl: ".swiper-button-prev",
-        nextEl: ".swiper-button-next",
+        nextEl: ".boton-siguiente",
+        prevEl: ".boton-anterior",
     },
     breakpoints: {
         768: { slidesPerView: 2 },
